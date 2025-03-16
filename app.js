@@ -19,6 +19,7 @@ var questionnariesRouter = require('./routes/questionnaries');
 var alertsRouter = require('./routes/alerts');
 var userSettingsRouter = require("./routes/user_settings");
 var userRouter = require("./routes/user");
+var reportsRouter = require("./routes/reports");
 
 var app = express();
 
@@ -42,6 +43,7 @@ app.use('/questionnaries', questionnariesRouter);
 app.use('/alerts', alertsRouter);
 app.use('/usersettings', userSettingsRouter);
 app.use("/users", userRouter);
+app.use("/reports", reportsRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
