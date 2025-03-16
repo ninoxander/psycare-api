@@ -1,15 +1,3 @@
-### API Coverage
-Based on Bruno Docs
-
-### API Coverage
-Based on Bruno Docs
-
-### API Coverage
-Based on Bruno Docs
-
-### API Coverage
-Based on Bruno Docs
-
 # PsyCare - API
 
 API oficial de PsyCare.
