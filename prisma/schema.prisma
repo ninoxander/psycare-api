@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model alerts {
+  alert_id    Int       @id @default(autoincrement())
+  user_id     Int?
+  type        String?   @db.VarChar
+  description String?
+  date        DateTime? @db.Timestamp(6)
+  status      String?   @db.VarChar
+  users       users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model articles {
+  article_id      Int            @id @default(autoincrement())
+  professional_id Int?
+  title           String?        @db.VarChar
+  content         String?
+  media_url       String?        @db.VarChar
+  media_type      String?        @db.VarChar
+  created_at      DateTime?      @db.Timestamp(6)
+  updated_at      DateTime?      @db.Timestamp(6)
+  professionals   professionals? @relation(fields: [professional_id], references: [professional_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model emotional_records {
+  record_id   Int       @id @default(autoincrement())
+  user_id     Int?
+  emotion     String?   @db.VarChar
+  intensity   Int?
+  description String?
+  date        DateTime? @db.Date
+  created_at  DateTime? @db.Timestamp(6)
+  users       users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model habits {
+  habit_id    Int       @id @default(autoincrement())
+  user_id     Int?
+  habit_type  String?   @db.VarChar
+  description String?
+  date        DateTime? @db.Date
+  created_at  DateTime? @db.Timestamp(6)
+  users       users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model notifications {
+  notification_id Int       @id @default(autoincrement())
+  user_id         Int?
+  message         String?
+  type            String?   @db.VarChar
+  date            DateTime? @db.Timestamp(6)
+  read_status     String?   @db.VarChar
+  users           users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model patient_professional {
+  relation_id     Int            @id @default(autoincrement())
+  patient_id      Int?
+  professional_id Int?
+  start_date      DateTime?      @db.Date
+  end_date        DateTime?      @db.Date
+  status          String?        @db.VarChar
+  users           users?         @relation(fields: [patient_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  professionals   professionals? @relation(fields: [professional_id], references: [professional_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model professionals {
+  professional_id      Int                    @id @default(autoincrement())
+  user_id              Int?                   @unique
+  specialization       String?                @db.VarChar
+  license_number       String?                @db.VarChar
+  created_at           DateTime?              @db.Timestamp(6)
+  articles             articles[]
+  patient_professional patient_professional[]
+  users                users?                 @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  sessions             sessions[]
+}
+
+model questionnaires {
+  questionnaire_id Int       @id @default(autoincrement())
+  user_id          Int?
+  type             String?   @db.VarChar
+  responses        Json?     @db.Json
+  date             DateTime? @db.Date
+  created_at       DateTime? @db.Timestamp(6)
+  users            users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model sessions {
+  session_id      Int            @id @default(autoincrement())
+  patient_id      Int?
+  professional_id Int?
+  date            DateTime?      @db.Timestamp(6)
+  notes           String?
+  created_at      DateTime?      @db.Timestamp(6)
+  users           users?         @relation(fields: [patient_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  professionals   professionals? @relation(fields: [professional_id], references: [professional_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model user_settings {
+  setting_id               Int       @id @default(autoincrement())
+  user_id                  Int?      @unique
+  notification_preferences Json?     @db.Json
+  privacy_settings         Json?     @db.Json
+  created_at               DateTime? @db.Timestamp(6)
+  users                    users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  user_id              Int                    @id @default(autoincrement())
+  name                 String?                @db.VarChar
+  email                String?                @unique @db.VarChar
+  password             String?                @db.VarChar
+  role                 String?                @db.VarChar
+  bio                  String?                @db.VarChar(255)
+  pronouns             String?                @db.VarChar(100)
+  created_at           DateTime?              @db.Timestamp(6)
+  updated_at           DateTime?              @db.Timestamp(6)
+  age                  Int?
+  alerts               alerts[]
+  emotional_records    emotional_records[]
+  habits               habits[]
+  notifications        notifications[]
+  patient_professional patient_professional[]
+  professionals        professionals?
+  questionnaires       questionnaires[]
+  sessions             sessions[]
+  user_settings        user_settings?
+}
