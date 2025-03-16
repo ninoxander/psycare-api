@@ -11,8 +11,6 @@ total_implemented = df[df["IMPLEMENTED"] == "TRUE"].shape[0]
 total_endpoints = df.shape[0]
 percent_implemented = (total_implemented / total_endpoints) * 100
 
-df["% Coverage"] = df_numeric[coverage_columns].mean(axis=1).round(2)
-
 markdown_table = df.to_markdown(index=False)
 
 with open(readme_path, "r") as file:
