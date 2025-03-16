@@ -1,0 +1,15 @@
+Endpoint,GET,POST,PUT,DELETE,IMPLEMENTED,PASSING
+Articles,,,,,FALSE,0
+Alerts,11,10,,,TRUE,21
+Auth,,8,,,TRUE,8
+Emotional records,,,,,FALSE,0
+Habits,,,,,FALSE,0
+Index,,,,,FALSE,0
+Login,,,,,FALSE,0
+Notifications,,,,,FALSE,0
+Questionnaries,,,,,FALSE,0
+Sesions,,,,,FALSE,0
+Signup,,,,,FALSE,0
+User settings,,,,,FALSE,0
+User,,,,,FALSE,0
+,,,,Total,2,29

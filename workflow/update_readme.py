@@ -19,7 +19,7 @@ with open(readme_path, "r") as file:
 start = readme.index("<!-- START_TABLE -->\n") + 1
 end = readme.index("<!-- END_TABLE -->\n")
 progress_bar = f"![](https://geps.dev/progress/{int(percent_implemented)})"
-readme[start:end] = [markdown_table + "\n\n**Total Coverage: {}%**\n{}".format(percent_implemented.round(2), progress_bar)]
+readme[start:end] = [markdown_table + "\n\n**Total Coverage: {}%**\n{}".format(round(percent_implemented, 2), progress_bar)]
 
 with open(readme_path, "w") as file:
     file.write("### API Coverage\n")
