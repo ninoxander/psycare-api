@@ -109,6 +109,88 @@ router.get("/", async (req, res) => {
 
 /**
  * @swagger
+ * /users/{id}:
+ *   get:
+ *     summary: Obtener información de un usuario por ID
+ *     description: Devuelve la información de un usuario específico, incluyendo bio y pronouns.
+ *     tags:
+ *       - Usuarios
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID del usuario a buscar
+ *     responses:
+ *       200:
+ *         description: Información del usuario
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 user_id:
+ *                   type: integer
+ *                   example: 1
+ *                 name:
+ *                   type: string
+ *                   example: "Juan Pérez"
+ *                 email:
+ *                   type: string
+ *                   example: "juan@example.com"
+ *                 bio:
+ *                   type: string
+ *                   example: "Amante de la tecnología y el café."
+ *                 pronouns:
+ *                   type: string
+ *                   example: "él/ella"
+ *                 created_at:
+ *                   type: string
+ *                   format: date-time
+ *                   example: "2024-03-10T12:00:00Z"
+ *                 updated_at:
+ *                   type: string
+ *                   format: date-time
+ *                   example: "2024-03-10T12:00:00Z"
+ *       404:
+ *         description: Usuario no encontrado
+ *       500:
+ *         description: Error del servidor
+ */
+router.get("/:id", async (req, res) => {
+    const userId = parseInt(req.params.id);
+
+    try {
+        const user = await prisma.users.findUnique({
+            where: { user_id: userId },
+            select: {
+                user_id: true,
+                name: true,
+                email: true,
+                bio: true,
+                pronouns: true,
+                created_at: true,
+                updated_at: true,
+                age: true,
+            },
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+
+        res.json(user);
+    } catch (error) {
+        console.error("Error al obtener información del usuario:", error);
+        res.status(500).json({ error: "Error del servidor" });
+    }
+});
+
+/**
+ * @swagger
  * /users:
  *   put:
  *     summary: Actualizar información del usuario autenticado
