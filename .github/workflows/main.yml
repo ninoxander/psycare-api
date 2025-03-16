@@ -1,0 +1,39 @@
+name: Sync Google Sheets
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Ejecuta cada hora
+  workflow_dispatch:  # Permite ejecución manual
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          pip install pandas tabulate  # Instala las librerías necesarias
+      - name: Login into Google
+        run: |
+          curl https://www.google.com/accounts/ClientLogin --data-urlencode Email=zap01462@zapopan.tecmm.edu.mx --data-urlencode Passwd=${{ secrets.GOOGLE_PASSWORD }} -d accountType=GOOGLE -d source=Google-cURL-Example -d service=lh2
+      - name: Download Google Sheets CSV
+        run: |
+          curl -L "https://docs.google.com/spreadsheets/d/1V0ADz6KaQ_RLuDJkxF0rru0LG9P4dJtGRT57hLtXwSw/export?format=csv" -o "./data.csv"
+
+      - name: Update README
+        run: |
+          python ./workflow/update_readme.py
+
+      - name: Commit changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.name "ninoxander"
+          git config --global user.email "za220111414@zapopan.tecmm.edu.mx"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
+          git add README.md
+          git commit -m "Update API Coverage from Google Sheets" || echo "No changes to commit"
+          git push origin HEAD:main  # Empuja explícitamente a la rama main
+
