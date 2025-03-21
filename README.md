@@ -23,4 +23,5 @@ API oficial de PsyCare.
 | *                 | *     | *      | *     | Total    | 2             |        63 |
 
 **Total Coverage: 14.29%**
-![](https://geps.dev/progress/14)<!-- END_TABLE -->
+![](https://geps.dev/progress/14)
+<!-- END_TABLE -->
