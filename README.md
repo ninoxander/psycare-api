@@ -23,10 +23,4 @@ API oficial de PsyCare.
 | *                 | *     | *      | *     | Total    | 5             |        63 |
 
 **Total Coverage: 42.86%**
-![](https://geps.dev/progress/42)
-
-_Disclaimer: por el momento se están marcando como 'implemented' todas aquellos endpoint para prótocolos GET y POST. 
-En la mayoría de los casos esto es debido a que si los prótocolos de lectura y escritura están funcionando, significa 
-que la base de datos está funcionando correctamente. Se creará una entrada correspondiente en el README cuando se desarrollen los
-test para DELETE y PUT._
-<!-- END_TABLE -->
+![](https://geps.dev/progress/42)<!-- END_TABLE -->
