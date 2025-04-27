@@ -24,10 +24,13 @@ var testRouter = require("./routes/test");
 
 var app = express();
 
-app.use(cors({
+app.use(cors());
+// Activar el bloque de abajo en prod
+/* app.use(cors({
     origin: 'http://localhost:3001', // el frontend
     credentials: true, // permitir credenciales (cookies, auth headers)
 }));
+*/
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
