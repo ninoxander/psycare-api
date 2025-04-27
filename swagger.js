@@ -12,8 +12,8 @@ const options = {
         },
         servers: [
             {
-                url: "http://localhost:3000", 
-                description: "Servidor local",
+                url: "https://psycare-api.onrender.com/", 
+                description: "Producción",
             },
         ],
     },
