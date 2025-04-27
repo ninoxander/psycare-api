@@ -24,7 +24,7 @@ var testRouter = require("./routes/test");
 
 var app = express();
 
-const allowedOrigins = ["http://192.168.56.1:3000/", "http://localhost:3001"];
+const allowedOrigins = ["https://psycare-api.onrender.com/", "http://localhost:3001"];
 
 app.use(
     cors({
