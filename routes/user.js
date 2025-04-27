@@ -93,6 +93,7 @@ router.get("/", async (req, res) => {
                 created_at: true,
                 updated_at: true,
                 age: true,
+                role: true,
             },
         });
 

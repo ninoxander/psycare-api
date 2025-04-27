@@ -150,3 +150,10 @@ model support_reports {
   // Relación con la tabla de usuarios
   users users? @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
 }
+
+model test {
+  id          Int       @id @default(autoincrement())
+  title       String?   @db.VarChar
+  description String?
+  date        DateTime? @db.Date
+}

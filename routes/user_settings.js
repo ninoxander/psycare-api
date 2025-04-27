@@ -34,7 +34,7 @@ router.use(_auth);
 
 /**
  * @swagger
- * /user_settings:
+ * /user-settings:
  *   post:
  *     summary: Crear configuración de usuario
  *     description: Permite a un usuario configurar sus preferencias de notificaciones y privacidad.
@@ -81,7 +81,7 @@ router.post("/", async (req, res) => {
 
 /**
  * @swagger
- * /user_settings:
+ * /user-settings:
  *   get:
  *     summary: Obtener configuración de usuario
  *     description: Devuelve la configuración de usuario autenticado.
@@ -116,7 +116,7 @@ router.get("/", async (req, res) => {
 
 /**
  * @swagger
- * /user_settings:
+ * /user-settings:
  *   put:
  *     summary: Actualizar configuración de usuario
  *     description: Permite actualizar las preferencias de notificaciones y privacidad.
@@ -173,7 +173,7 @@ router.put("/", async (req, res) => {
 
 /**
  * @swagger
- * /user_settings:
+ * /user-settings:
  *   delete:
  *     summary: Eliminar configuración de usuario
  *     description: Permite al usuario eliminar su configuración de notificaciones y privacidad.

@@ -20,10 +20,14 @@ var alertsRouter = require('./routes/alerts');
 var userSettingsRouter = require("./routes/user_settings");
 var userRouter = require("./routes/user");
 var reportsRouter = require("./routes/reports");
+var testRouter = require("./routes/test");
 
 var app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3001', // el frontend
+    credentials: true, // permitir credenciales (cookies, auth headers)
+}));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -41,9 +45,10 @@ app.use('/sessions', sesionsRouter);
 app.use('/articles', articlesRouter);
 app.use('/questionnaries', questionnariesRouter);
 app.use('/alerts', alertsRouter);
-app.use('/usersettings', userSettingsRouter);
+app.use('/user-settings', userSettingsRouter);
 app.use("/users", userRouter);
 app.use("/reports", reportsRouter);
+app.use("/test", testRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
