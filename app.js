@@ -26,17 +26,8 @@ var app = express();
 
 const allowedOrigins = ["https://psycare-api.onrender.com/", "http://localhost:3001"];
 
-app.use(
-    cors({
-        origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-                callback(null, true);
-            } else {
-                callback(new Error("No permitido por CORS"));
-            }
-        },
-    })
-);
+// Accept all
+app.use(cors());
 
 app.use(logger("dev"));
 app.use(express.json());
