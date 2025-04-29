@@ -5,6 +5,7 @@ API oficial de PsyCare.
 ## Credenciales conocidas.
 
 **Para Soe**.
+
 Te dejo unas credenciales con las que puedes iniciar sesión para obtener un token, autenticarte y probar todas los endpoint que tienen candadito.
 
 ```
@@ -13,6 +14,10 @@ Te dejo unas credenciales con las que puedes iniciar sesión para obtener un tok
   "password": "mynameispinkiepie"
 }
 ```
+
+## Limitaciones del servidor de la API.
+
+Nuestro servidor es gratuito, por lo que entra en estado de hibernación cada 14 minutos si no detecta actividad en la API. Si en algún momento notas que no responde o te da errores '500', simplemente espera unos cuantos segundos (máximo 10) a que se 'despierte' otra vez y solita va a empezar a funcionar.
 
 ## Sync sheets: API Coverage
 <!-- START_TABLE -->
