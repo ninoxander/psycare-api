@@ -2,6 +2,17 @@
 
 API oficial de PsyCare.
 
+## Credenciales conocidas.
+
+**Para Soe**.
+Te dejo unas credenciales con las que puedes iniciar sesión para obtener un token, autenticarte y probar todas los endpoint que tienen candadito.
+
+```
+{
+  "email": "pinki@pai.mlp",
+  "password": "mynameispinkiepie"
+}
+```
 
 ## Sync sheets: API Coverage
 <!-- START_TABLE -->
