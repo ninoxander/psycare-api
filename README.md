@@ -2,6 +2,12 @@
 
 API oficial de PsyCare.
 
+## API en entorno de producción.
+[PsyCare API - Producción](https://psycare-api.onrender.com/)
+
+**Nota: cada 14 minutos el servidor donde está alojada revisa si la API está en uso, si no detecta movimiento entra en modo de hibernación.**
+
+
 
 ## Sync sheets: API Coverage
 <!-- START_TABLE -->
