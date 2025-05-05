@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const prisma = new PrismaClient();
 const router = express.Router();
 
+// Authorization Middleware
 const _auth = (req, res, next) => {
     const token = req.header("Authorization")?.replace("Bearer ", "");
 
@@ -37,7 +38,7 @@ router.use(_auth);
  * /users:
  *   get:
  *     summary: Obtener información del usuario autenticado
- *     description: Devuelve la información del usuario autenticado, incluyendo bio y pronouns.
+ *     description: Devuelve la información del usuario autenticado, incluyendo bio, pronouns, age, and role.
  *     tags:
  *       - Usuarios
  *     security:
@@ -65,6 +66,12 @@ router.use(_auth);
  *                 pronouns:
  *                   type: string
  *                   example: "él/ella"
+ *                 age:
+ *                   type: integer
+ *                   example: 30
+ *                 role:
+ *                   type: string
+ *                   example: "usuario"
  *                 created_at:
  *                   type: string
  *                   format: date-time
@@ -90,10 +97,10 @@ router.get("/", async (req, res) => {
                 email: true,
                 bio: true,
                 pronouns: true,
-                created_at: true,
-                updated_at: true,
                 age: true,
                 role: true,
+                created_at: true,
+                updated_at: true,
             },
         });
 
@@ -113,7 +120,7 @@ router.get("/", async (req, res) => {
  * /users/{id}:
  *   get:
  *     summary: Obtener información de un usuario por ID
- *     description: Devuelve la información de un usuario específico, incluyendo bio y pronouns.
+ *     description: Devuelve la información de un usuario específico, incluyendo bio, pronouns, age, and role.
  *     tags:
  *       - Usuarios
  *     security:
@@ -148,6 +155,12 @@ router.get("/", async (req, res) => {
  *                 pronouns:
  *                   type: string
  *                   example: "él/ella"
+ *                 age:
+ *                   type: integer
+ *                   example: 30
+ *                 role:
+ *                   type: string
+ *                   example: "usuario"
  *                 created_at:
  *                   type: string
  *                   format: date-time
@@ -173,9 +186,10 @@ router.get("/:id", async (req, res) => {
                 email: true,
                 bio: true,
                 pronouns: true,
+                age: true,
+                role: true,
                 created_at: true,
                 updated_at: true,
-                age: true,
             },
         });
 
@@ -195,7 +209,7 @@ router.get("/:id", async (req, res) => {
  * /users:
  *   put:
  *     summary: Actualizar información del usuario autenticado
- *     description: Actualiza la información del usuario autenticado, incluyendo bio y pronouns.
+ *     description: Actualiza la información del usuario autenticado, incluyendo bio, pronouns, age, and role.
  *     tags:
  *       - Usuarios
  *     security:
@@ -219,6 +233,12 @@ router.get("/:id", async (req, res) => {
  *               pronouns:
  *                 type: string
  *                 example: "él/ella"
+ *               age:
+ *                 type: integer
+ *                 example: 30
+ *               role:
+ *                 type: string
+ *                 example: "usuario"
  *     responses:
  *       200:
  *         description: Información del usuario actualizada
@@ -253,7 +273,9 @@ router.get("/:id", async (req, res) => {
  */
 router.put("/", async (req, res) => {
     const userId = req.userId;
-    const { name, email, bio, pronouns } = req.body;
+    const { name, email, bio, pronouns, age, role } = req.body;  // Include the new fields
+
+    // Optionally validate input here (e.g., email format, etc.)
 
     try {
         const updatedUser = await prisma.users.update({
@@ -263,6 +285,8 @@ router.put("/", async (req, res) => {
                 email,
                 bio,
                 pronouns,
+                age,  // New field
+                role, // New field
                 updated_at: new Date(),
             },
             select: {
@@ -272,6 +296,8 @@ router.put("/", async (req, res) => {
                 bio: true,
                 pronouns: true,
                 updated_at: true,
+                age: true,  // New field
+                role: true, // New field
             },
         });
 
@@ -303,7 +329,7 @@ router.delete("/", async (req, res) => {
 
     try {
         await prisma.users.delete({
-            where: { user_id: userId },
+            where: { user_id: userId }, // Ensure this field name is correct
         });
 
         res.json({ message: "Cuenta eliminada exitosamente" });

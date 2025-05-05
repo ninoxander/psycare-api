@@ -7,7 +7,7 @@ const options = {
         openapi: "3.0.0",
         info: {
             title: "PsyCare API",
-            version: "1.0.0",
+            version: "1.8.0",
             description: "Documentación de la API de PsyCare",
         },
         servers: [

@@ -23,6 +23,10 @@ var userRouter = require("./routes/user");
 var reportsRouter = require("./routes/reports");
 var testRouter = require("./routes/test");
 var statusRouter = require("./routes/status");
+var forumIndexRouter = require("./routes/forum_index");
+var forumEntries = require("./routes/forum_entries");
+var entryComments = require("./routes/entry_comments");
+var entryTags = require("./routes/entry_tags");
 
 var app = express();
 
@@ -60,6 +64,10 @@ app.use("/users", userRouter);
 app.use("/reports", reportsRouter);
 app.use("/test", testRouter);
 app.use("/status", statusRouter);
+app.use("/forum_index", forumIndexRouter);
+app.use("/forum_entries", forumEntries);
+app.use("/forum_entry_comments", entryComments);
+app.use("/forum_entry_tags", entryTags);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
