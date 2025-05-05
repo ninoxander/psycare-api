@@ -134,6 +134,8 @@ model users {
   sessions             sessions[]
   user_settings        user_settings?
   support_reports      support_reports[] 
+  forum_entries        forum_entries[]        
+  forum_entry_comments forum_entry_comments[] 
 }
 
 model support_reports {
@@ -156,4 +158,50 @@ model test {
   title       String?   @db.VarChar
   description String?
   date        DateTime? @db.Date
+}
+
+// Simplified forum schema
+
+model forum_index {
+  index_id   Int             @id @default(autoincrement())
+  title      String          @db.VarChar(255)
+  description String?        @db.Text
+  entries    forum_entries[]
+}
+
+model forum_entries {
+  entry_id    Int                 @id @default(autoincrement())
+  index_id    Int
+  user_id     Int?               // <-- Made optional
+  title       String             @db.VarChar(255)
+  content     String?            @db.Text
+  media_url   String?            @db.VarChar(500)
+  created_at  DateTime           @default(now()) @db.Timestamp(6)
+  updated_at  DateTime           @updatedAt @db.Timestamp(6)
+
+  forum_index forum_index        @relation(fields: [index_id], references: [index_id], onDelete: Cascade)
+  users       users?             @relation(fields: [user_id], references: [user_id], onDelete: SetNull) // <-- Optional
+  comments    forum_entry_comments[]
+  tags        forum_entry_tags[]
+}
+
+model forum_entry_comments {
+  comment_id   Int                  @id @default(autoincrement())
+  entry_id     Int
+  user_id      Int?                 // <-- Made optional
+  content      String?             @db.Text
+  media_url    String?             @db.VarChar(500)
+  created_at   DateTime            @default(now()) @db.Timestamp(6)
+  updated_at   DateTime            @updatedAt @db.Timestamp(6)
+
+  forum_entries forum_entries      @relation(fields: [entry_id], references: [entry_id], onDelete: Cascade)
+  users         users?             @relation(fields: [user_id], references: [user_id], onDelete: SetNull) // <-- Optional
+}
+
+model forum_entry_tags {
+  tag_id   Int              @id @default(autoincrement())
+  entry_id Int
+  tag      String           @db.VarChar(50)
+
+  forum_entries forum_entries @relation(fields: [entry_id], references: [entry_id], onDelete: Cascade)
 }

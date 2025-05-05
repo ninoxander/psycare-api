@@ -3,6 +3,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
+const hbs = require('express-handlebars');
 
 const { swaggerUi, specs } = require("./swagger");
 
@@ -21,6 +22,7 @@ var userSettingsRouter = require("./routes/user_settings");
 var userRouter = require("./routes/user");
 var reportsRouter = require("./routes/reports");
 var testRouter = require("./routes/test");
+var statusRouter = require("./routes/status");
 
 var app = express();
 
@@ -34,6 +36,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// Views
+app.engine("handlebars", hbs.engine({
+    defaultLayout: "main", 
+}));
+app.set("view engine", "handlebars");
+app.set("views", path.join(__dirname, "views"));
 
 // Endpoints disponibles
 app.use("/", indexRouter);
@@ -50,6 +59,7 @@ app.use("/user-settings", userSettingsRouter);
 app.use("/users", userRouter);
 app.use("/reports", reportsRouter);
 app.use("/test", testRouter);
+app.use("/status", statusRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
