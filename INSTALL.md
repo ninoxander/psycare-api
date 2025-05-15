@@ -178,4 +178,6 @@ Puedes organizar tus solicitudes en carpetas para una mejor estructura:
 
 ## Notas sobre Autenticación
 
-Todos los endpoints protegidos en PsyCare API requieren un token JWT en el encabezado de autorización. Bruno maneja esto automáticamente usando la variable de entorno  `token`  que configuramos en los scripts de prueba.
+Todos los endpoints protegidos en PsyCare API requieren un token JWT en el encabezado de autorización. 
+Bruno maneja esto automáticamente usando la variable de entorno  `token`  que configuramos en los scripts 
+de prueba.

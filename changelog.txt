@@ -1,0 +1,245 @@
+commit dea9146a6d207db38abc61c7651289e5962aa232
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Tue May 13 21:58:49 2025 -0600
+
+    :lipstick: Añadiendo la guia de instalación
+
+commit 2b2a0a155525cf4f95a359684fc7a75ba24a6294
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Tue May 13 21:47:12 2025 -0600
+
+    :lipstick: Añadiendo la documentación requerida de la API
+
+commit bd340948f18e10e716668a8bbb5c72d067a2e9f6
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun May 4 19:46:01 2025 -0600
+
+    Large update: añadiendo los endpoint/swagger docs de la sección de foro
+
+commit f55bd7356a3e430b2e1230cbe1cf20ecaf3ddcce
+Merge: 1541ced c9c5f8a
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun May 4 18:56:12 2025 -0600
+
+    Merge branch 'supabase' of https://github.com/ninoxander/psycare-api into supabase
+
+commit 1541ced5a775592067ad3e8301813d4ba7f4b2fb
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun May 4 18:55:31 2025 -0600
+
+    Quick patch: añadiendo funcionalidades para el foro
+
+commit c9c5f8a547fd787d77b9b8b25e278a0fddbab62e
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Mon Apr 28 18:57:05 2025 -0600
+
+    Update en el READ.me
+
+commit 6b24741465dc864a64528c764f4b0d20d9fbc2bf
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Mon Apr 28 17:52:25 2025 -0600
+
+    Ahora CORS debería de aceptar todos los origenes
+
+commit 065acc25392c87e3845b61cde439a2728a6293eb
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sat Apr 26 19:31:25 2025 -0600
+
+    Hot fix: añadiendo modificacion a swagger (prod)
+
+commit 174eeb81e2ccd0b6d829396df118274dcbcf361f
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sat Apr 26 19:26:38 2025 -0600
+
+    Hot fix: encontramos el error, parche realizado
+
+commit 564c451d9a60d66acc79123d8b7c3ed50ea9607f
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sat Apr 26 19:20:22 2025 -0600
+
+    Hot fix: modificando CORS para permitir acceso a swagger en deploy server
+
+commit 7565d9011b6b10dfdfcd083ca3286f2e78b6bd47
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sat Apr 26 19:10:42 2025 -0600
+
+    Fix momentaneo en CORS para permitir la conectividad con otros servicios
+
+commit 1c44dde1465bce281b6aa2eb349e69c0559fffeb
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sat Apr 26 18:52:52 2025 -0600
+
+    Configuración de Prisma con Supabase y migraciones
+
+commit c1fb745cf3b8a3d382a423aafeafc12af21ee8b9
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Fri Mar 21 04:28:22 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit 4643333ce53d31f52fa7c9cc2edd7a514c56716c
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Thu Mar 20 22:09:47 2025 -0600
+
+    Actualización de README (disclaimer de implementación).
+
+commit cf47d1f8fc947e9aa27c5a5b3f5cd5d8db980697
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Fri Mar 21 04:06:41 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit 99ccaed82ee4f2c43197f7f79d9e4a73dc1150ee
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Thu Mar 20 22:06:14 2025 -0600
+
+    Fix del readme (review issue)
+
+commit 51ac297d81b01552fdef58d0e969e7b043bc42b6
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Fri Mar 21 04:04:54 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit 8fd5d58d724dbffa10e399e4ed46d542e216575e
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Thu Mar 20 22:04:29 2025 -0600
+
+    Fix del readme
+
+commit c7dc65f84e424205fe94ef4788383af217f7ff50
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 09:54:15 2025 -0600
+
+    Se borraron las entradas repetidas del readme.
+
+commit 2c570408aa81cf5fbf13ac49d24c007c9f57126c
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 15:29:02 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit ed52be75e05d9bcf74ab90b08861786948373955
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 09:28:25 2025 -0600
+
+    Fix para el problema del formato en Sync Sheets con el update_readme.py
+
+commit 39ff493b32086c446b0c3d2b65459f6786a10d76
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 09:13:46 2025 -0600
+
+    Último fix manual al readme
+
+commit 6532f23ac6e2fea84df8d2a3e03c28254eab5a4b
+Merge: 1e41fdd 5e731b0
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 09:13:14 2025 -0600
+
+    Merge branch 'main' of https://github.com/ninoxander/psycare-api
+
+commit 1e41fdd3bca4c29ef5d8d1a35ec82e8f4caa5529
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 09:13:03 2025 -0600
+
+    Se añadió un fix al problema de duplicado de líneas y al formato incorrecto de final de tabla
+
+commit 5e731b08c27cf81d67c970ae2beb45832c1167ff
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 15:08:33 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit 4eed93f851e5e89be08c5e76ac464b3beb727b81
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 09:05:22 2025 -0600
+
+    Fix de no encontrar el final de la tabla en el readme otra vez.
+
+commit 13aa4b57209fb9e11da8f8e6cc646eb75438ddf1
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 15:01:13 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit 1d20859f4cc251d57763b01e0d3dcb2cc3da499c
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 09:00:38 2025 -0600
+
+    Solución a "<!-- END_TABLE -->\n" not found en el sync
+
+commit ea86cf59a18215a31b266df01417c731ed963c86
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 08:49:43 2025 -0600
+
+    Se creó una nueva tabla de reportes, un nuevo modelo en el schema y un endpoint post en /reports para manejar los reportes
+
+commit 16887284afafc2fa2e84ee98834eca688e2329d5
+Merge: f26fba4 71c2bfb
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 08:10:48 2025 -0600
+
+    Merge branch 'main' of https://github.com/ninoxander/psycare-api
+
+commit f26fba44ca0bd5b1017936e0fc8496d204afbacb
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 08:10:37 2025 -0600
+
+    Se añade un endpoint de busqueda por id a la categoria user
+
+commit 71c2bfbb5093a81a841081a2f05bb381f437a479
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 13:39:23 2025 +0000
+
+    Update API Coverage from Google Sheets
+
+commit b719dba6c19e76670398ccba034a884079afb184
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:38:50 2025 -0600
+
+    Corrigiendo el error de round en el update_readme.py
+
+commit 18ba5b61c86a0cac3f024907e8fa364723cb7d9c
+Merge: 89e861c 9c05074
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:35:28 2025 -0600
+
+    Merge branch 'main' of https://github.com/ninoxander/psycare-api
+
+commit 89e861c7d658fbf36348f44792220826c70bde83
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:35:18 2025 -0600
+
+    Corrigiendo el error de df en el update_readme.py
+
+commit 9c05074d22c1c6c061c4aaa753be653427d95353
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 07:32:13 2025 -0600
+
+    Añadiendo el workflow Sync Google Sheets
+
+commit 05ece098eee2a3a43fd990a8cba4e671f8849335
+Merge: 0d99310 d085ad2
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:29:58 2025 -0600
+
+    Merge branch 'main' of https://github.com/ninoxander/psycare-api
+    Este merge es necesario para tener al dia remote con local.
+
+commit 0d993100687fe5585992260d11bb64d2f56770d8
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:29:46 2025 -0600
+
+    Actualizando el update_readme.py para ser consecuente con la tabla en sheets
+
+commit d085ad220f93a27a751e5af8d6d93b95f38e3f86
+Author: Ivette Nava <126045075+ninoxander@users.noreply.github.com>
+Date:   Sun Mar 16 07:20:17 2025 -0600
+
+    Se añadió el placeholder para la tabla de API Coverage
+
+commit 088fe471708200cc43fe607f51e8cd6f6f75b423
+Author: ninoxander <za220111414@zapopan.tecmm.edu.mx>
+Date:   Sun Mar 16 07:08:01 2025 -0600
+
+    :tada: Reiniciando el repositorio por problemas de dependencias en el monorepo anterior
